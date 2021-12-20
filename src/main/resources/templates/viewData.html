@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>View Data</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <style>
+        th, td {
+            padding: 10px;
+        }
+        .text-center {
+            text-align: center;
+        }
+    </style>
+    
+    <body>
+        <div><b>Data</b></div>
+        <br>
+        <table border="1">
+            <tbody th:each="item,count:${data}">
+                <tr>
+                    <td th:text="${count.index+1}"></td>
+                    <td th:text="${item[0]}"></td>
+                    <td th:text="${item[1]}" class="text-center"></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <div><b>Hasil : </b><span th:text="${cari}"></span></div>
+        <br>
+        <table border="1">
+            <tbody th:each="item,count:${result}">
+                <tr>
+                    <td th:text="${count.index+1}"></td>
+                    <td th:text="${item[0]}"></td>
+                    <td th:text="${item[1]}" class="text-center"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <span th:text="${status}"></span>
+    </body>
+</html>
